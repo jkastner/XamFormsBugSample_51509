@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Browse Entries Page"
+             BackgroundColor="DarkGray"
+             x:Class="Test_NavPage.BrowseEntriesPage">
+  <ContentPage.Content>
+    <StackLayout Margin="350,0,15,0">
+      <Label FontSize="Medium" Text="1. Open the Menu"></Label>
+      <Label FontSize="Medium" Text="2. Click 'Single Entry'"></Label>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

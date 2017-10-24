@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:Test_NavPage"
+                  IsPresented="{Binding IsPresented}"
+                  MasterBehavior="Popover"
+                  WidthRequest="80"
+                  Title="Main Page"
+                  x:Class="Test_NavPage.MainPage">
+
+  <MasterDetailPage.Master>
+    <ContentPage Title="Zee Master" >
+      <ListView x:Name="listView" 
+                ItemsSource="{Binding Pages}"
+                SeparatorVisibility="None" SelectedItem="{Binding SelectedPage}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid HorizontalOptions="Start">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Title}" VerticalOptions="FillAndExpand" />
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage x:Name="MainNavigationPage" Popped="OnPopped">
+      <x:Arguments>
+        <local:BrowseEntriesPage />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

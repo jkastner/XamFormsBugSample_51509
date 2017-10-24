@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="LightSlateGray"
+             NavigationPage.HasNavigationBar="False"
+             Title="{Binding MyPageTitle}"
+             xmlns:local="clr-namespace:Test_NavPage" x:Class="Test_NavPage.SingleEntryPage">
+  <ContentPage.Content>
+    <StackLayout Margin="350,0,15,0">
+      <Button Command="{Binding NavigateToTestPageCommand}" FontSize="Medium" Text="4. Click Here"></Button>
+      <Label FontSize="Medium" Text="3. Click anywhere to give the page focus." ></Label>
+      <Label Margin="5,25,5,0" FontSize="{Binding DescriptiveFontSize}" Text="{Binding DescriptiveText}"></Label>
+      <StackLayout IsVisible="{Binding IsAfterBackButton}">
+        <Button Text="Check 'HasNavBar' property"
+                Clicked="CheckHasNavBarCommand"
+                ></Button>
+        <Label>Has nav bar:</Label>
+        <Label Text="{Binding HasNavBar}"></Label>
+        <Label FontSize="Medium" Text="7. Empty the title. Navigate back to 'Browse Entries' to start over. The bug will not appear when Title is empty."></Label>
+        <Label Text="Page Title"></Label>
+        <Editor Text="{Binding MyPageTitle}"></Editor>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Some Other Page"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Test_NavPage.Views.SomeOtherPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="350,0,15,0" FontSize="Large" Text="5. Click the back arrow" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
