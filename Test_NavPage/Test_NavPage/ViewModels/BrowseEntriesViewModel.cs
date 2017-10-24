@@ -1,6 +1,5 @@
 using System.Collections.ObjectModel;
 using System.Linq;
-using Autofac;
 using Test_NavPage.ViewModels;
 
 namespace Test_NavPage
@@ -9,7 +8,7 @@ namespace Test_NavPage
   {
     public BrowseEntriesViewModel()
     {
-      SingleEntryViewModel = IoC.Scope.Resolve<SingleEntryViewModel>();
+      SingleEntryViewModel = IoC.Resolve<SingleEntryViewModel>();
     }
 
     public SingleEntryViewModel SingleEntryViewModel { get; set; }

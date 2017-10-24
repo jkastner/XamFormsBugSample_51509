@@ -1,5 +1,4 @@
 using System;
-using Autofac;
 using Test_NavPage.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,12 +11,12 @@ namespace Test_NavPage
 		public SingleEntryPage ()
 		{
 			InitializeComponent ();
-      BindingContext = IoC.Scope.Resolve<SingleEntryViewModel>();
+      BindingContext = IoC.Resolve<SingleEntryViewModel>();
     }
 
 	  private void CheckHasNavBarCommand(object sender, EventArgs e)
 	  {
-	    IoC.Scope.Resolve<SingleEntryViewModel>().HasNavBar = NavigationPage.GetHasNavigationBar(this).ToString();
+	    IoC.Resolve<SingleEntryViewModel>().HasNavBar = NavigationPage.GetHasNavigationBar(this).ToString();
 
 	  }
 

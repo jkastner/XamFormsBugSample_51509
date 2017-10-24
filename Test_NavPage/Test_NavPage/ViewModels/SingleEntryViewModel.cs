@@ -1,4 +1,3 @@
-using Autofac;
 using Test_NavPage.Views;
 using Xamarin.Forms;
 
@@ -33,8 +32,8 @@ namespace Test_NavPage.ViewModels
 
     private void NavigateToTestPage()
     {
-      var target = IoC.Scope.Resolve<SomeOtherPage>();
-      IoC.Scope.Resolve<NavigationViewModel>().NavigateTo(target);
+      var target = IoC.Resolve<SomeOtherPage>();
+      IoC.Resolve<NavigationViewModel>().NavigateTo(target);
       DescriptiveText = "6. Notice, after returning, the NavigationBar is visible. This is the bug. You can avoid this bug by setting the Page Title to empty in the optional step 7 below.";
       DescriptiveFontSize = 30;
       IsAfterBackButton = true;

@@ -1,4 +1,3 @@
-using Autofac;
 using Test_NavPage;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +10,7 @@ namespace Test_NavPage
     public BrowseEntriesPage()
     {
       InitializeComponent();
-      BindingContext = IoC.Scope.Resolve<BrowseEntriesViewModel>();
+      BindingContext = IoC.Resolve<BrowseEntriesViewModel>();
     }
     
 	}

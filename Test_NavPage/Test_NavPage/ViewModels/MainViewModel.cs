@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using Autofac;
 using Xamarin.Forms;
 
 namespace Test_NavPage.ViewModels
@@ -18,8 +17,8 @@ namespace Test_NavPage.ViewModels
     {
       _masterPageItems = new ObservableCollection<ContentPage>();
       NavigationPoppedCommand = new Command(NavigationPopped);
-      SingleEntryPage sep = IoC.Scope.Resolve<SingleEntryPage>();
-      BrowseEntriesPage bep = IoC.Scope.Resolve<BrowseEntriesPage>();
+      SingleEntryPage sep = IoC.Resolve<SingleEntryPage>();
+      BrowseEntriesPage bep = IoC.Resolve<BrowseEntriesPage>();
       _masterPageItems.Add(sep);
       _masterPageItems.Add(bep);
     }
@@ -59,7 +58,7 @@ namespace Test_NavPage.ViewModels
       {
         if (_navigationViewModel == null)
         {
-          _navigationViewModel = IoC.Scope.Resolve<NavigationViewModel>();
+          _navigationViewModel = IoC.Resolve<NavigationViewModel>();
         }
         return _navigationViewModel;
       }

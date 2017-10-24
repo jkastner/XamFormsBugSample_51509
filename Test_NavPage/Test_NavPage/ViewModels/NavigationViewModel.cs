@@ -1,4 +1,3 @@
-using Autofac;
 using Test_NavPage.ViewModels;
 using Xamarin.Forms;
 
@@ -10,7 +9,7 @@ namespace Test_NavPage
 
     public NavigationViewModel()
     {
-      MainViewModel = IoC.Scope.Resolve<MainViewModel>();
+      MainViewModel = IoC.Resolve<MainViewModel>();
     }
 
     internal MainViewModel MainViewModel { get; }
